@@ -72,10 +72,12 @@ function createModal(className) {
 
 function openModal(modal) {
   modal.showModal();
+  document.body.classList.add('no-scroll');
 }
 
 function closeModal(modal) {
   modal.close();
+  document.body.classList.remove('no-scroll');
 }
 
 function reset() {
@@ -205,6 +207,27 @@ newGameBtn.addEventListener('click', () => {
 leaderboardBtn.addEventListener('click', () => {
   openModal(leaderboard);
 })
+
+modalWin.addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) {
+    closeModal(modalWin);
+  }
+})
+
+leaderboard.addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) {
+    closeModal(leaderboard);
+  }
+})
+
+// Обработка закрытия через Esc или кнопку type="cancel"
+modalWin.addEventListener('close', () => {
+  document.body.classList.remove('no-scroll');
+});
+
+leaderboard.addEventListener('close', () => {
+  document.body.classList.remove('no-scroll');
+});
 
 modalNewGameBtn.addEventListener('click', () => {
   startNewGame();

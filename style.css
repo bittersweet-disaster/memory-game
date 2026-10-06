@@ -21,6 +21,10 @@ body {
   background-size: contain;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 header {
   height: 100px;
   display: flex;
