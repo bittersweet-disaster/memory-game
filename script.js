@@ -133,6 +133,19 @@ result.textContent = 'That\'s a win!';
 resultMoves.textContent = '';
 closeModalBtn.textContent = 'Close result';
 
+createModal('leaderboard');
+const leaderboard = document.querySelector('.leaderboard');
+const leaderboardContent = leaderboard.querySelector('div');
+const leaderboardHeader = document.createElement('p');
+const leaderboardNull = document.createElement('p');
+const closeLeaderboard = closeModalBtn.cloneNode();
+leaderboardHeader.textContent = 'Leaderboard';
+leaderboardNull.textContent = 'There is no result';
+closeLeaderboard.textContent = 'Close';
+leaderboardContent.append(leaderboardHeader);
+leaderboardContent.append(leaderboardNull);
+leaderboardContent.append(closeLeaderboard);
+
 const cards = [{ number: 1, image: '1.jpg' }, { number: 2, image: '2.jpg' }, { number: 3, image: '3.jpg' }, { number: 4, image: '4.jpg' }, { number: 5, image: '5.jpg' }, { number: 6, image: '6.jpg' }, { number: 7, image: '7.jpg' }, { number: 8, image: '8.jpg' }];
 const allCards = cards.concat(cards);
 
@@ -189,6 +202,10 @@ newGameBtn.addEventListener('click', () => {
   startNewGame();
 })
 
+leaderboardBtn.addEventListener('click', () => {
+  openModal(leaderboard);
+})
+
 modalNewGameBtn.addEventListener('click', () => {
   startNewGame();
   closeModal(modalWin);
@@ -196,4 +213,8 @@ modalNewGameBtn.addEventListener('click', () => {
 
 closeModalBtn.addEventListener('click', () => {
   closeModal(modalWin);
+})
+
+closeLeaderboard.addEventListener('click', () => {
+  closeModal(leaderboard);
 })
