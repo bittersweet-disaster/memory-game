@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: url('background.jpg');
+  background-repeat: repeat-x;
+  background-position: center center;
+  background-size: contain;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 50px;
+}
+
+button {
+  width: 250px;
+  height: 60px;
+  font-size: 24px;
+  color: red;
+  border: 5px solid red;
+  border-radius: 50px;
+  background-color: #000000;
+  cursor: url('skull.cur'), auto;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  grid-template-rows: repeat(4, 250px);
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  border: 5px solid black;
+  border-radius: 50px;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  cursor: url('skull.cur'), auto;
+  /* нельзя выделять текст картинки */
+  user-select: none;
+  /* Safari: запрещает перетаскивание */
+  -webkit-user-drag: none;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 45px;
+  opacity: 1;
+  display: block;
+}
+
+.image-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* transition: opacity 1s ease-in-out; */
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.opened {
+  border-color: red;
+}
+
+.found {
+  border-color: green;
+  pointer-events: none;
+}
+
+.counters {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 50px;
+}
+
+.counters div {
+  width: 250px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: red;
+  border: 5px solid red;
+  border-radius: 50px;
+  background-color: #000000;
+  cursor: none;
+}
+
+dialog {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  background-color: #000000;
+  border: 5px solid red;
+  border-radius: 50px;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+dialog div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 50px;
+}
+
+dialog p {
+  font-size: 28px;
+  color: red;
+  font-family: sans-serif;
+  font-weight: bold;
+}
