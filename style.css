@@ -68,6 +68,10 @@ button {
   position: relative;
   overflow: hidden;
   cursor: url('skull.cur'), auto;
+  /* нельзя выделять текст картинки */
+  user-select: none;
+  /* Safari: запрещает перетаскивание */
+  -webkit-user-drag: none;
 }
 
 .image {

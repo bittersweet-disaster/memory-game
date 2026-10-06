@@ -156,15 +156,18 @@ shuffleArray(allCards);
 for (let i = 0; i < 16; i++) {
   let div = document.createElement('div');
   div.className = 'card';
+  div.setAttribute('draggable', 'false'); // Disable dragging on the card element
 
   let imageCover = document.createElement('img');
   imageCover.src = 'pumpkin.jpg';
   imageCover.className = 'image image-cover';
+  imageCover.setAttribute('draggable', 'false'); // Disable dragging on the cover image
 
   let image = document.createElement('img');
   image.dataset.pair = allCards[i]['number'];
   image.src = allCards[i]['image'];
   image.className = 'image card-image';
+  image.setAttribute('draggable', 'false'); // Disable dragging on the dynamic image
 
   div.append(imageCover);
   div.append(image);
