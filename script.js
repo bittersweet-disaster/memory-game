@@ -35,8 +35,8 @@ pairs.textContent = 0;
 const dialog = document.createElement('dialog');
 const dialogWindow = document.createElement('div');
 const result = document.createElement('p');
+const resultMoves = document.createElement('p');
 const modalNewGameBtn = newGameBtn.cloneNode(true);
-const resultMoves = moves.cloneNode(true);
 const closeModalBtn = document.createElement('button');
 section.append(dialog);
 dialog.append(dialogWindow);
@@ -44,7 +44,8 @@ dialogWindow.append(result);
 dialogWindow.append(resultMoves);
 dialogWindow.append(modalNewGameBtn);
 dialogWindow.append(closeModalBtn);
-result.textContent = 'That\' a win!';
+result.textContent = 'That\'s a win!';
+resultMoves.textContent = '';
 closeModalBtn.textContent = 'Close result';
 
 const cards = [{ number: 1, image: '1.jpg' }, { number: 2, image: '2.jpg' }, { number: 3, image: '3.jpg' }, { number: 4, image: '4.jpg' }, { number: 5, image: '5.jpg' }, { number: 6, image: '6.jpg' }, { number: 7, image: '7.jpg' }, { number: 8, image: '8.jpg' }];
@@ -171,6 +172,7 @@ function checkForMatch() {
 
 function checkResult() {
   if (pairs.textContent === '8') {
+    resultMoves.textContent = 'Number of moves: ' + moves.textContent;
     dialog.showModal();
   }
 }

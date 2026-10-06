@@ -123,7 +123,13 @@ dialog {
   width: 50%;
   height: 50%;
   margin: auto;
-  background-color: grey;
+  background-color: #000000;
+  border: 5px solid red;
+  border-radius: 50px;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 dialog div {
@@ -134,4 +140,11 @@ dialog div {
   align-items: center;
   justify-content: center;
   row-gap: 50px;
+}
+
+dialog p {
+  font-size: 28px;
+  color: red;
+  font-family: sans-serif;
+  font-weight: bold;
 }
